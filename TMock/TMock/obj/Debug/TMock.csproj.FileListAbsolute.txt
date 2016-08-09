@@ -1,0 +1,5 @@
+F:\GIT\TMockRepo\TMock\TMock\TMock\bin\Debug\TMock.dll
+F:\GIT\TMockRepo\TMock\TMock\TMock\bin\Debug\TMock.pdb
+F:\GIT\TMockRepo\TMock\TMock\TMock\obj\Debug\TMock.dll
+F:\GIT\TMockRepo\TMock\TMock\TMock\obj\Debug\TMock.pdb
+F:\GIT\TMockRepo\TMock\TMock\TMock\obj\Debug\TMock.csprojResolveAssemblyReference.cache

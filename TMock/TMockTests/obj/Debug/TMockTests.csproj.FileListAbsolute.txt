@@ -1,0 +1,7 @@
+F:\GIT\TMockRepo\TMock\TMock\TMockTests\obj\Debug\TMockTests.csprojResolveAssemblyReference.cache
+F:\GIT\TMockRepo\TMock\TMock\TMockTests\bin\Debug\TMockTests.dll
+F:\GIT\TMockRepo\TMock\TMock\TMockTests\bin\Debug\TMockTests.pdb
+F:\GIT\TMockRepo\TMock\TMock\TMockTests\bin\Debug\TMock.dll
+F:\GIT\TMockRepo\TMock\TMock\TMockTests\bin\Debug\TMock.pdb
+F:\GIT\TMockRepo\TMock\TMock\TMockTests\obj\Debug\TMockTests.dll
+F:\GIT\TMockRepo\TMock\TMock\TMockTests\obj\Debug\TMockTests.pdb
