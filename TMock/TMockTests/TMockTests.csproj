@@ -53,6 +53,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MockUnitTest.cs" />
     <Compile Include="ExpressionAssistantTest.cs" />
+    <Compile Include="TypeBuilderTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TMock\TMock.csproj">

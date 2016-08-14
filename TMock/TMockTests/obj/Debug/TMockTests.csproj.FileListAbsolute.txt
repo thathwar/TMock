@@ -5,3 +5,10 @@ F:\GIT\TMockRepo\TMock\TMock\TMockTests\bin\Debug\TMock.dll
 F:\GIT\TMockRepo\TMock\TMock\TMockTests\bin\Debug\TMock.pdb
 F:\GIT\TMockRepo\TMock\TMock\TMockTests\obj\Debug\TMockTests.dll
 F:\GIT\TMockRepo\TMock\TMock\TMockTests\obj\Debug\TMockTests.pdb
+D:\TMockRepo\TMock\TMock\TMockTests\bin\Debug\TMockTests.dll
+D:\TMockRepo\TMock\TMock\TMockTests\bin\Debug\TMockTests.pdb
+D:\TMockRepo\TMock\TMock\TMockTests\bin\Debug\TMock.dll
+D:\TMockRepo\TMock\TMock\TMockTests\bin\Debug\TMock.pdb
+D:\TMockRepo\TMock\TMock\TMockTests\obj\Debug\TMockTests.csprojResolveAssemblyReference.cache
+D:\TMockRepo\TMock\TMock\TMockTests\obj\Debug\TMockTests.dll
+D:\TMockRepo\TMock\TMock\TMockTests\obj\Debug\TMockTests.pdb

@@ -42,6 +42,7 @@
     <Compile Include="ExpressionAssistant.cs" />
     <Compile Include="Mock.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TypeBuilder.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
