@@ -19,8 +19,5 @@ namespace TMockTests
     public interface ITestc
     {
         int TestMethod(int i);
-        //{
-        //    return i;
-        //}
     }
 }
