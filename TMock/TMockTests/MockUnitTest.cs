@@ -10,13 +10,16 @@ namespace TMockTests
         [TestMethod]
         public void TestMethod1()
         {
-            var mock = new Mock<ITest>();
-            mock.SetUp(f => f.Add(1, 2));
+            try
+            {
+                var mock = new Mock<IMath>();
+                mock.SetUp(f => f.Add(1, 2));
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
         }
-    }
-
-    public interface ITest
-    {
-        int Add(int i, int j);
     }
 }

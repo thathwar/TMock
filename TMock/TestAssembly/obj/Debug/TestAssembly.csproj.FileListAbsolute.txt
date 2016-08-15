@@ -1,0 +1,7 @@
+D:\TMockRepo\TMock\TMock\TestAssembly\bin\Debug\TestAssembly.dll
+D:\TMockRepo\TMock\TMock\TestAssembly\bin\Debug\TestAssembly.pdb
+D:\TMockRepo\TMock\TMock\TestAssembly\obj\Debug\TestAssembly.csprojResolveAssemblyReference.cache
+D:\TMockRepo\TMock\TMock\TestAssembly\obj\Debug\TestAssembly.dll
+D:\TMockRepo\TMock\TMock\TestAssembly\obj\Debug\TestAssembly.pdb
+D:\TMockRepo\TMock\TMock\TestAssembly\bin\Debug\TestAssemblySecondStage.dll
+D:\TMockRepo\TMock\TMock\TestAssembly\bin\Debug\TestAssemblySecondStage.pdb

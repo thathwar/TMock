@@ -7,6 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TMock", "TMock\TMock.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TMockTests", "TMockTests\TMockTests.csproj", "{C6DA591F-8853-4030-A978-B69EBAB5D1CD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAssembly", "TestAssembly\TestAssembly.csproj", "{C5721953-F480-4297-88CE-CED4146FDCEB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unit Tests", "Unit Tests", "{4998433B-D9A9-4F4F-9D11-1889C2BCEB6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAssemblySecondStage", "TestAssemblySecondStage\TestAssemblySecondStage.csproj", "{A33888BF-7242-40C6-B360-11901C8C41FD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,8 +27,21 @@ Global
 		{C6DA591F-8853-4030-A978-B69EBAB5D1CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6DA591F-8853-4030-A978-B69EBAB5D1CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6DA591F-8853-4030-A978-B69EBAB5D1CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5721953-F480-4297-88CE-CED4146FDCEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5721953-F480-4297-88CE-CED4146FDCEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5721953-F480-4297-88CE-CED4146FDCEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5721953-F480-4297-88CE-CED4146FDCEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A33888BF-7242-40C6-B360-11901C8C41FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A33888BF-7242-40C6-B360-11901C8C41FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A33888BF-7242-40C6-B360-11901C8C41FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A33888BF-7242-40C6-B360-11901C8C41FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C6DA591F-8853-4030-A978-B69EBAB5D1CD} = {4998433B-D9A9-4F4F-9D11-1889C2BCEB6E}
+		{C5721953-F480-4297-88CE-CED4146FDCEB} = {4998433B-D9A9-4F4F-9D11-1889C2BCEB6E}
+		{A33888BF-7242-40C6-B360-11901C8C41FD} = {4998433B-D9A9-4F4F-9D11-1889C2BCEB6E}
 	EndGlobalSection
 EndGlobal

@@ -50,12 +50,21 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="IMath.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MockUnitTest.cs" />
     <Compile Include="ExpressionAssistantTest.cs" />
     <Compile Include="TypeBuilderTest.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TestAssemblySecondStage\TestAssemblySecondStage.csproj">
+      <Project>{A33888BF-7242-40C6-B360-11901C8C41FD}</Project>
+      <Name>TestAssemblySecondStage</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TestAssembly\TestAssembly.csproj">
+      <Project>{C5721953-F480-4297-88CE-CED4146FDCEB}</Project>
+      <Name>TestAssembly</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TMock\TMock.csproj">
       <Project>{dd38c40d-e0db-4222-a99b-926377bdf5c4}</Project>
       <Name>TMock</Name>

@@ -1,0 +1,4 @@
+D:\TMockRepo\TMock\TMock\TestAssemblySecondStage\bin\Debug\TestAssemblySecondStage.dll
+D:\TMockRepo\TMock\TMock\TestAssemblySecondStage\bin\Debug\TestAssemblySecondStage.pdb
+D:\TMockRepo\TMock\TMock\TestAssemblySecondStage\obj\Debug\TestAssemblySecondStage.dll
+D:\TMockRepo\TMock\TMock\TestAssemblySecondStage\obj\Debug\TestAssemblySecondStage.pdb

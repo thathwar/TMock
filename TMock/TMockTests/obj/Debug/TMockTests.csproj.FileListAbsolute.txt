@@ -12,3 +12,7 @@ D:\TMockRepo\TMock\TMock\TMockTests\bin\Debug\TMock.pdb
 D:\TMockRepo\TMock\TMock\TMockTests\obj\Debug\TMockTests.csprojResolveAssemblyReference.cache
 D:\TMockRepo\TMock\TMock\TMockTests\obj\Debug\TMockTests.dll
 D:\TMockRepo\TMock\TMock\TMockTests\obj\Debug\TMockTests.pdb
+D:\TMockRepo\TMock\TMock\TMockTests\bin\Debug\TestAssembly.dll
+D:\TMockRepo\TMock\TMock\TMockTests\bin\Debug\TestAssembly.pdb
+D:\TMockRepo\TMock\TMock\TMockTests\bin\Debug\TestAssemblySecondStage.dll
+D:\TMockRepo\TMock\TMock\TMockTests\bin\Debug\TestAssemblySecondStage.pdb

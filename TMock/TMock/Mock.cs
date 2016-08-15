@@ -26,6 +26,8 @@ namespace TMock
                     + " is not an interface");
             }
 
+            var oobj = TypeBuilder.Create<T>(null);
+
             return this;
         } 
     }
