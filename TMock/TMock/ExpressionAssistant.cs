@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace TMock
 {
-    public static class ExpressionAssistant
+    internal static class ExpressionAssistant
     {
         public static string GetMethod<T, TResult>(Expression<Func<T, TResult>> expression) where T : class
         {

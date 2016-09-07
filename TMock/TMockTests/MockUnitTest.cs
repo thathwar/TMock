@@ -8,18 +8,10 @@ namespace TMockTests
     public class MockUnitTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void SetupTest()
         {
-            try
-            {
-                var mock = new Mock<IMath>();
-                mock.SetUp(f => f.Add(1, 2));
-            }
-            catch (Exception)
-            {
-                
-                throw;
-            }
+            var mock = new Mock<IMath>();
+            mock.SetUp(f => f.Add(1, 2));
         }
     }
 }

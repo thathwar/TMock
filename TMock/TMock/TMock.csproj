@@ -39,10 +39,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArgumentsNotMatchedException.cs" />
     <Compile Include="ExpressionAssistant.cs" />
+    <Compile Include="MethodInfo.cs" />
     <Compile Include="Mock.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StringMethodBuilder.cs" />
     <Compile Include="TypeBuilder.cs" />
+    <Compile Include="Extensions.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -55,6 +55,7 @@
     <Compile Include="MockUnitTest.cs" />
     <Compile Include="ExpressionAssistantTest.cs" />
     <Compile Include="TypeBuilderTest.cs" />
+    <Compile Include="ExtensionsTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TestAssemblySecondStage\TestAssemblySecondStage.csproj">
