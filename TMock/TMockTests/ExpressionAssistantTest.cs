@@ -13,6 +13,8 @@ namespace TMockTests
             var s = ExpressionAssistant.GetMethod((ITestc p) => p.TestMethod(1));
 
             var result = ExpressionAssistant.ResolveArgs((ITestc p) => p.TestMethod(1));
+
+            var prop = ExpressionAssistant.GetMethod((IMath m) => m.Result);
         }
     }
 

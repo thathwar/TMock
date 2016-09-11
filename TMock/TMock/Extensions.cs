@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TMock
 {
-    internal static class Extensions
+    public static class Extensions
     {
         public static bool HasProperty(this object obj, string propertyName)
         {
@@ -17,5 +17,19 @@ namespace TMock
         {
             return src.GetType().GetProperty(propName).GetValue(src, null);
         }
+
+        public static string ToPlaneString(this IEnumerable<string> strings)
+        {
+            var sb = new StringBuilder();
+
+            if (strings != null)
+                foreach (var s in strings)
+                {
+                    sb.AppendLine(s);
+                }
+
+            return sb.ToString();
+        }
+
     }
 }

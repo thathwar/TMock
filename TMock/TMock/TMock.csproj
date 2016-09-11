@@ -39,12 +39,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArgumentSetupAction.cs" />
+    <Compile Include="ArgumentSetupFunction.cs" />
     <Compile Include="ArgumentsNotMatchedException.cs" />
+    <Compile Include="CSharpTypeNameBuilder.cs" />
     <Compile Include="ExpressionAssistant.cs" />
+    <Compile Include="I.cs" />
+    <Compile Include="IArgumentSetupAction.cs" />
+    <Compile Include="IArgumentSetupFunction.cs" />
+    <Compile Include="IMethodTestSetupAction.cs" />
+    <Compile Include="IMethodTestSetupFunction.cs" />
+    <Compile Include="ITestAction.cs" />
+    <Compile Include="ITestFunc.cs" />
+    <Compile Include="MethodDescription.cs" />
     <Compile Include="MethodInfo.cs" />
+    <Compile Include="MethodTestSetupAction.cs" />
+    <Compile Include="MethodTestSetupFunction.cs" />
     <Compile Include="Mock.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StringMethodBuilder.cs" />
+    <Compile Include="StringPropertyBuilder.cs" />
+    <Compile Include="TestAction.cs" />
+    <Compile Include="TestFunc.cs" />
     <Compile Include="TypeBuilder.cs" />
     <Compile Include="Extensions.cs" />
   </ItemGroup>

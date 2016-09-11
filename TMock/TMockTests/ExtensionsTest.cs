@@ -10,7 +10,10 @@ namespace TMockTests
         [TestMethod]
         public void HasPropertyTest()
         {
-            Assert.IsTrue(new { A = 1 }.HasProperty("A"));
+            object obj = new {A = 1};
+            Assert.IsTrue(obj.HasProperty("A"));
+            Assert.AreEqual(1,obj.GetPropValue("A"));
+
             Assert.IsFalse(new { A = 1 }.HasProperty("B"));
         }
     }

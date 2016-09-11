@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TestAssembly;
@@ -10,6 +12,7 @@ namespace TMockTests
     [TestClass]
     public class TypeBuilderTest
     {
+         private List<MethodInfo> _data;
         delegate void TestDelegate(out int x);
         [TestMethod]
         public void CreateTest()
@@ -23,12 +26,23 @@ namespace TMockTests
         [TestMethod]
         public void StringMethodsBuilderTest()
         {
-            
+
             foreach (var buildMethod in new StringMethodBuilder().BuildMethods(typeof(IMath)))
             {
 
             }
         }
+
+        [TestMethod]
+        public void StringPropertyBuilderTest()
+        {
+            foreach (var buildMethod in new StringPropertyBuilder().BuildProperty(typeof(IMath)))
+            {
+
+            }
+        }
+
+
 
     }
 

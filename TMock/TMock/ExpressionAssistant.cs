@@ -10,33 +10,66 @@ namespace TMock
 {
     internal static class ExpressionAssistant
     {
-        public static string GetMethod<T, TResult>(Expression<Func<T, TResult>> expression) where T : class
+        public static MethodDescription GetMethod<T, TResult>(Expression<Func<T, TResult>> expression) 
         {
-            return ((MethodCallExpression)expression.Body).Method.Name;
+            if (expression.Body as MemberExpression != null)
+            {
+                var pmember = ((MemberExpression) expression.Body).Member;
+                return new MethodDescription(){IsProp = true,Name = pmember.ToString()};
+            }
+
+            var mmember = ((MethodCallExpression) expression.Body).Method;
+            return new MethodDescription() { IsProp = false, Name = mmember.ToString() };
+
         }
 
-        public static KeyValuePair<Type, object>[] ResolveArgs<T, TResult>(Expression<Func<T, TResult>> expression) where T : class
+        public static MethodDescription GetMethod<T>(Expression<Action<T>> expression) 
+        {
+            if (expression.Body as MemberExpression != null)
+            {
+                var pmember = ((MemberExpression)expression.Body).Member;
+                return new MethodDescription() { IsProp = true, Name = pmember.ToString() };
+            }
+
+            var mmember = ((MethodCallExpression)expression.Body).Method;
+            return new MethodDescription() { IsProp = false, Name = mmember.ToString() };
+        }
+
+        public static List<Argument> ResolveArgs<T, TResult>(Expression<Func<T, TResult>> expression) 
         {
             var body = (MethodCallExpression)expression.Body;
 
-            var values = new List<KeyValuePair<Type, object>>();
+            return BuildArgWithValues(body);
+        }
 
+        public static List<Argument> ResolveArgs<T>(Expression<Action<T>> expression)
+        {
+            var body = (MethodCallExpression)expression.Body;
+
+            return BuildArgWithValues(body);
+
+        }
+
+        private static List<Argument> BuildArgWithValues(MethodCallExpression body)
+        {
+            var values = new List<Argument>();
             foreach (var argument in body.Arguments)
             {
                 if (argument is ConstantExpression)
                 {
-                    var type = argument.Type;
                     var value = (((ConstantExpression)argument).Value);
-                    values.Add(new KeyValuePair<Type, object>(type, value));
+                    values.Add(new Argument() { Value = value });
                 }
                 else
                 {
-                    throw new NotSupportedException(expression.ToString());
+                    var comp = Expression.Lambda<Func<object>>(Expression.Convert(argument, typeof(object))).Compile();
+                    var result = comp();
+                    values.Add(new Argument() { Value = result, IsAny = argument.ToString() == "Any()" });
                 }
 
             }
 
-            return values.ToArray();
+            return values;
         }
 
     }

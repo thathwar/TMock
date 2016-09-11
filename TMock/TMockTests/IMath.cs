@@ -16,5 +16,7 @@ namespace TMockTests
         void Multiply(decimal a, decimal b, out decimal c);
 
         void Devide(decimal a, decimal b, ref decimal c);
+
+        int Result { get; set; }
     }
 }

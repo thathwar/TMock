@@ -12,12 +12,14 @@ namespace TMock
 {
     internal static class TypeBuilder
     {
+        
         public static T Create<T>(List<MethodInfo> methodInfos)
         {
             T timplementor = default(T);
 
             var sb = new System.Text.StringBuilder();
-            BuildImplementoString(sb, typeof(T).FullName);
+
+            BuildImplementoString(sb, typeof(T));
             
             var parameters = new System.CodeDom.Compiler.CompilerParameters
             {
@@ -49,7 +51,7 @@ namespace TMock
             }
             else
             {
-                throw new Exception("Unable to mock " + typeof(T).FullName);
+                throw new Exception("Unable to mock " + CSharpTypeNameBuilder.GetCSharpRepresentation(typeof(T),true));
             }
 
             return timplementor;
@@ -68,29 +70,30 @@ namespace TMock
             parameters.ReferencedAssemblies.Add(typeof(System.Linq.Enumerable).Assembly.Location);
         }
 
-        private static void BuildImplementoString(StringBuilder sb, string fullName)
+        private static void BuildImplementoString(StringBuilder sb, Type t)
         {
             sb.Append(@"
             using System;
             using System.Collections.Generic;
             using System.Linq;
+            using TMock;
 
             namespace TMockDynamic
             {
-                public class RuntimeImplementor:").Append(fullName).Append(@"
+                public class RuntimeImplementor:").Append(CSharpTypeNameBuilder.GetCSharpRepresentation(t, true)).Append(@"
                 {").Append(@"
                    
                     private List<MethodInfo> _data;
 
                     public RuntimeImplementor(object data){ _data=(List<MethodInfo>)data; }
 
-                    public TestAssembly.Response Add(int i, int j)
-                    {
-                       return (TestAssembly.Response)_data;
-                    }
+//METHODS#
+
+//PROPS#
+
                }
 
-             }");
+             }".Replace(@"//METHODS#", new StringMethodBuilder().BuildMethods(t).ToPlaneString()).Replace(@"//PROPS#", new StringPropertyBuilder().BuildProperty(t).ToPlaneString()));
         }
 
         private static CSharpCodeProvider GetProvider()

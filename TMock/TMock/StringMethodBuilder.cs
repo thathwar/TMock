@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.Remoting.Services;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +12,7 @@ namespace TMock
     {
         public IEnumerable<string> BuildMethods(Type t)
         {
-            var methodInfos = t.GetMethods();
+            var methodInfos = t.GetMethods(BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic).Where(m => !m.IsSpecialName);
 
             foreach (System.Reflection.MethodInfo methodInfo in methodInfos)
             {
@@ -20,10 +21,13 @@ namespace TMock
                 var paramList = new List<Param>();
                 var argument = BuildParameters(methodInfo, paramList);
 
-                methodBuilder.AppendFormat("{0} {1}({2})", methodInfo.ReturnType == typeof(void) ? "void" : methodInfo.ReturnType.FullName, methodInfo.Name, argument);
+                methodBuilder.AppendFormat("public {0} {1}({2})", methodInfo.ReturnType == typeof(void) ? "void" : methodInfo.ReturnType.FullName, methodInfo.Name, argument);
                 methodBuilder.AppendLine();
                 methodBuilder.AppendLine("{");
-
+                foreach (var param in paramList.Where(f => f.IsOut))
+                {
+                    methodBuilder.AppendLine(string.Format("                        {0}=default({1});", param.Name, param.Type.ToString().TrimEnd('&')));
+                }
                 methodBuilder.AppendLine("  if(_data != null)");
                 methodBuilder.AppendLine("  {");
 
@@ -41,10 +45,9 @@ namespace TMock
                     count++;
                 }
                 methodBuilder.AppendLine("                  if(isMatch)");
-                methodBuilder.AppendLine("                  {");
+                methodBuilder.AppendLine("                  { first.IsExecuted = true;");
                 methodBuilder.AppendLine("                      if(first.ExpectedArgument.ParamSetValue !=null)");
                 methodBuilder.AppendLine("                      {");
-                int pcount = 0;
                 foreach (var param in paramList)
                 {
                     methodBuilder.AppendLine(string.Format("                        if(first.ExpectedArgument.ParamSetValue.HasProperty(\"{0}\"))", param.Name) + "{" + param.Name + " = (" + param.Type.ToString().TrimEnd('&') + ") first.ExpectedArgument.ParamSetValue.GetPropValue(\""+param.Name+"\"); }");
@@ -52,11 +55,11 @@ namespace TMock
                 methodBuilder.AppendLine("                      }");
                 if (methodInfo.ReturnType != typeof (void))
                 {
-                    methodBuilder.AppendLine(string.Format("                      if(first.ExpectedArgument.Func !=null) return ({0})first.ExpectedArgument.Func()", methodInfo.ReturnType.ToString()));
+                    methodBuilder.AppendLine(string.Format("                      if(first.ExpectedArgument.Func !=null) return ({0})first.ExpectedArgument.Func();", methodInfo.ReturnType.ToString()));
                 }
                 else
                 {
-                    methodBuilder.AppendLine("                      if(first.ExpectedArgument.Action !=null) first.ExpectedArgument.Action()");
+                    methodBuilder.AppendLine("                      if(first.ExpectedArgument.Action !=null) first.ExpectedArgument.Action();");
                 }
                 methodBuilder.AppendLine("                  }");
                 methodBuilder.AppendLine("                  else { throw new TMock.ArgumentsNotMatchedException(\"Arguments passed in for the method '"+ methodInfo.Name +"' does not match the expected arguments. \"); }");
@@ -107,7 +110,7 @@ namespace TMock
                     }
                 }
 
-                paramList.Add(new Param() { Name = param.Name, Type = param.ParameterType });
+                paramList.Add(new Param() { Name = param.Name, Type = param.ParameterType, IsOut = param.IsOut});
                 argumentBuilder.AppendFormat("{0},", paramString);
             }
 
@@ -121,5 +124,7 @@ namespace TMock
         public Type Type { get; set; }
 
         public string Name { get; set; }
+
+        public bool IsOut { get; set; }
     }
 }

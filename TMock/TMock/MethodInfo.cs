@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace TMock
 {
-    internal class MethodInfo
+    public class MethodInfo
     {
+        public bool IsProp { get; set; }    
+
         public string Method { get; set; }
 
         public ExpectedArgument ExpectedArgument { get; set; }
@@ -15,7 +17,7 @@ namespace TMock
         public bool IsExecuted { get; set; }
     }
 
-    internal class ExpectedArgument
+    public class ExpectedArgument
     {
         public List<Argument> Arguments { get; set; }
 
@@ -23,10 +25,10 @@ namespace TMock
 
         public Func<object> Func { get; set; }
 
-        public dynamic ParamSetValue { get; set; }
+        public object ParamSetValue { get; set; }
     }
 
-    internal class Argument
+    public class Argument
     {
         public object Value { get; set; }
 
