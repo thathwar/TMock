@@ -10,6 +10,11 @@ namespace TMock
 {
     internal class StringMethodBuilder
     {
+        /// <summary>
+        /// Builds Methods as string defined in a given type.
+        /// </summary>
+        /// <param name="t">t</param>
+        /// <returns>IEnumerable of string</returns>
         public IEnumerable<string> BuildMethods(Type t)
         {
             var methodInfos = t.GetMethods(BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic).Where(m => !m.IsSpecialName);
@@ -92,6 +97,7 @@ namespace TMock
             }
         }
 
+        //Builds parameter in method defined in a type.
         private string BuildParameters(System.Reflection.MethodInfo methodInfo, ICollection<Param> paramList)
         {
             var argumentBuilder = new StringBuilder();
@@ -119,6 +125,9 @@ namespace TMock
 
     }
 
+    /// <summary>
+    /// Holds parameter information.
+    /// </summary>
     internal class Param
     {
         public Type Type { get; set; }

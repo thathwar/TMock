@@ -1,13 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TMock
 {
     internal class CSharpTypeNameBuilder
     {
+        /// <summary>
+        /// Returns CShrap style type name for given type.
+        /// </summary>
+        /// <param name="t"></param>
+        /// <param name="trimArgCount">trimArgCount</param>
+        /// <returns>string</returns>
         public static string GetCSharpRepresentation(Type t, bool trimArgCount)
         {
             if (t.IsGenericType)
@@ -20,11 +24,12 @@ namespace TMock
             return t.FullName;
         }
 
-        static string GetCSharpRepresentation(Type t, bool trimArgCount, List<Type> availableArguments)
+        //Resolves the type name to C# style, with resolution to generic type.
+        private static string GetCSharpRepresentation(Type t, bool trimArgCount, List<Type> availableArguments)
         {
             if (t.IsGenericType)
             {
-                string value = string.Format("{0}.{1}", t.Namespace,t.Name);
+                string value = string.Format("{0}.{1}", t.Namespace, t.Name);
 
                 if (trimArgCount && value.IndexOf("`") > -1)
                 {

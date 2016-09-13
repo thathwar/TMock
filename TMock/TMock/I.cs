@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace TMock
 {
     public static class I
     {
+        /// <summary>
+        /// Returns any value for the mentioned type.
+        /// </summary>
+        /// <typeparam name="T">T</typeparam>
+        /// <returns>T</returns>
         public static T Any<T>()
         {
             return default(T);

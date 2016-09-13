@@ -8,6 +8,11 @@ namespace TMock
 {
     internal class StringPropertyBuilder
     {
+        /// <summary>
+        /// Builds and returns properties in a given type.
+        /// </summary>
+        /// <param name="t">t</param>
+        /// <returns>IEnumerable of string</returns>
         public IEnumerable<string> BuildProperty(Type t)
         {
             var propInfos = t.GetProperties();

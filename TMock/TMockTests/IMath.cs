@@ -18,5 +18,7 @@ namespace TMockTests
         void Devide(decimal a, decimal b, ref decimal c);
 
         int Result { get; set; }
+
+        int I { get; set; }
     }
 }

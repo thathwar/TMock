@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace TMock
 {
+    /// <summary>
+    /// Acts as a carrier for method information.
+    /// </summary>
     class MethodDescription
     {
         public string Name { get; set; }

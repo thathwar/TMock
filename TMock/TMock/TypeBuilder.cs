@@ -12,7 +12,12 @@ namespace TMock
 {
     internal static class TypeBuilder
     {
-        
+        /// <summary>
+        /// Creates Class implimentation code in C# as a string and then compiles, run and returns the instance of the Class.
+        /// </summary>
+        /// <typeparam name="T">T</typeparam>
+        /// <param name="methodInfos">methodInfos</param>
+        /// <returns>T</returns>
         public static T Create<T>(List<MethodInfo> methodInfos)
         {
             T timplementor = default(T);
@@ -57,6 +62,7 @@ namespace TMock
             return timplementor;
         }
 
+        //Build compiler parameters.
         private static void BuildParameters(CompilerParameters parameters)
         {
             parameters.ReferencedAssemblies.Add("System.dll");
@@ -70,6 +76,7 @@ namespace TMock
             parameters.ReferencedAssemblies.Add(typeof(System.Linq.Enumerable).Assembly.Location);
         }
 
+        //Builds class constructs.
         private static void BuildImplementoString(StringBuilder sb, Type t)
         {
             sb.Append(@"
@@ -96,6 +103,7 @@ namespace TMock
              }".Replace(@"//METHODS#", new StringMethodBuilder().BuildMethods(t).ToPlaneString()).Replace(@"//PROPS#", new StringPropertyBuilder().BuildProperty(t).ToPlaneString()));
         }
 
+        //Gets CSharpCodeProvider with CompilerVersion.
         private static CSharpCodeProvider GetProvider()
         {
             var providerOptions = new Dictionary<string, string>();

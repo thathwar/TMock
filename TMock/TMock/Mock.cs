@@ -5,6 +5,7 @@ using System.Linq.Expressions;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using TMock.MockReturns;
 
 namespace TMock
 {
@@ -41,6 +42,12 @@ namespace TMock
         #endregion
 
         #region Public Methods
+        /// <summary>
+        /// Moock a method
+        /// </summary>
+        /// <typeparam name="TResult">TResult</typeparam>
+        /// <param name="f">f</param>
+        /// <returns>ITestFunc</returns>
         public ITestFunc SetUp<TResult>(Expression<Func<T, TResult>> f)
         {
 
@@ -65,6 +72,11 @@ namespace TMock
             return testFunc;
         }
 
+        /// <summary>
+        /// Mock a method
+        /// </summary>
+        /// <param name="f">f</param>
+        /// <returns>ITestAction</returns>
         public ITestAction SetUp(Expression<Action<T>> f)
         {
             var result = ExpressionAssistant.GetMethod(f);

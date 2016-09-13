@@ -16,3 +16,7 @@ D:\TMockRepo\TMock\TMock\TMockTests\bin\Debug\TestAssembly.dll
 D:\TMockRepo\TMock\TMock\TMockTests\bin\Debug\TestAssembly.pdb
 D:\TMockRepo\TMock\TMock\TMockTests\bin\Debug\TestAssemblySecondStage.dll
 D:\TMockRepo\TMock\TMock\TMockTests\bin\Debug\TestAssemblySecondStage.pdb
+F:\GIT\TMockRepo\TMock\TMock\TMockTests\bin\Debug\TestAssembly.dll
+F:\GIT\TMockRepo\TMock\TMock\TMockTests\bin\Debug\TestAssemblySecondStage.dll
+F:\GIT\TMockRepo\TMock\TMock\TMockTests\bin\Debug\TestAssemblySecondStage.pdb
+F:\GIT\TMockRepo\TMock\TMock\TMockTests\bin\Debug\TestAssembly.pdb

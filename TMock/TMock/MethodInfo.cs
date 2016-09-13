@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace TMock
 {
+    /// <summary>
+    /// Holds mock method information.
+    /// </summary>
     public class MethodInfo
     {
         public bool IsProp { get; set; }    
@@ -17,6 +20,9 @@ namespace TMock
         public bool IsExecuted { get; set; }
     }
 
+    /// <summary>
+    /// Holds expectation information for a mock method.
+    /// </summary>
     public class ExpectedArgument
     {
         public List<Argument> Arguments { get; set; }
@@ -28,6 +34,9 @@ namespace TMock
         public object ParamSetValue { get; set; }
     }
 
+    /// <summary>
+    /// Holds argument information for a mock method.
+    /// </summary>
     public class Argument
     {
         public object Value { get; set; }

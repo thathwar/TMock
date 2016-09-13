@@ -36,7 +36,7 @@ namespace TMockTests
         public void SetupInerfaces()
         {
             decimal[] c = { 1 };
-            var mock = new Mock<ICalc<Math>>();
+            var mock = new Mock<ICalc<IMath>>();
             mock.SetUp(f => f.Get()).Do(() => new Math() { I = 123 });
 
             var u = new User(mock.Object);
@@ -103,14 +103,14 @@ namespace TMockTests
 
     public class User
     {
-        private ICalc<Math> _calc;
+        private ICalc<IMath> _calc;
 
-        public User(ICalc<Math> calc)
+        public User(ICalc<IMath> calc)
         {
             _calc = calc;
         }
 
-        public Math CreateMath()
+        public IMath CreateMath()
         {
             return _calc.Get();
         }
